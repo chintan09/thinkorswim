@@ -1,0 +1,18 @@
+
+
+## Weigths 
+## Updated on Dec 13
+# https://www.spglobal.com/spdji/en/indices/equity/sp-500/#data
+
+
+input XLK_WT = 26.4;
+input XLV_WT = 15.20;
+input XLF_WT = 11.60;
+input XLY_WT = 10.40;
+input XLI_WT = 8.4;
+input XLC_WT = 7.5;
+input XLP_WT = 7.0;
+input XLE_WT = 5.10;
+input XLU_WT = 3.00;
+input XLB_WT = 2.70;
+input XLRE_WT = 2.70;

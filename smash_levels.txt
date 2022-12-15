@@ -1,0 +1,92 @@
+
+
+
+## For dec 15
+
+input ES_F = "/ES:XCME";
+input SPX = "SPX"; 
+def  delta = Average(close(ES_F) - close(SPX));
+
+input smash = 4044; 
+input up_1 = 4068;
+input up_2 = 4084;
+input up_3 = 4105; 
+
+input down_1 = 4019;
+input down_2 = 4000;
+input down_3 = 3986; 
+input down_4 = 3971; 
+
+def smash_spx = smash - delta; 
+def up_1_spx = up_1 - delta;
+def up_2_spx = up_2 - delta;
+def up_3_spx = up_3 - delta;
+def down_1_spx = down_1 - delta;
+def down_2_spx = down_2 - delta;
+def down_3_spx = down_3 - delta;
+def down_4_spx = down_4 - delta;
+
+def smash_spy = (smash_spx - 0.94)/ 10; 
+def up_1_spy = (up_1_spx - 0.94) / 10;
+def up_2_spy =  (up_2_spx - 0.94) / 10;
+def up_3_spy = (up_3_spx - 0.94) / 10;
+def down_1_spy =  (down_1_spx - 0.94) / 10;
+def down_2_spy = (down_2_spx - 0.94) / 10;
+def down_3_spy = (down_3_spx - 0.94) / 10;
+def down_4_spy =  (down_4_spx - 0.94) / 10;
+
+
+
+plot Line01 = if  GetSymbol() == ES_F then smash else if GetSymbol() == SPX then smash_spx else if GetSymbol() == "SPY" then smash_spy else double.nan;
+Line01.SetDefaultColor(Color.RED);
+Line01.SetLineWeight(2);
+
+
+plot Line02 = if  GetSymbol() == ES_F then up_1 else if GetSymbol() == SPX then up_1_spx else if GetSymbol() == "SPY" then up_1_spy else double.nan;
+Line02.SetDefaultColor(Color.WHITE);
+Line02.SetLineWeight(1);
+
+
+plot Line03 = if  GetSymbol() == ES_F then up_2 else if GetSymbol() == SPX then up_2_spx else if GetSymbol() == "SPY" then up_2_spy  else double.nan;
+Line03.SetDefaultColor(Color.WHITE);
+Line03.SetLineWeight(1);
+
+plot Line04 = if  GetSymbol() == ES_F then up_3 else if GetSymbol() == SPX then up_3_spx else if GetSymbol() == "SPY" then up_3_spy else double.nan;
+Line04.SetDefaultColor(Color.WHITE);
+Line04.SetLineWeight(1);
+
+plot Line05 = if  GetSymbol() == ES_F then down_1 else if GetSymbol() == SPX then down_1_spx else if GetSymbol() == "SPY" then down_1_spy else double.nan;
+Line05.SetDefaultColor(Color.WHITE);
+Line05.SetLineWeight(1);
+
+
+plot Line06 = if  GetSymbol() == ES_F then down_2 else if GetSymbol() == SPX then down_2_spx else if GetSymbol() == "SPY" then down_2_spy else double.nan;
+Line06.SetDefaultColor(Color.WHITE);
+Line06.SetLineWeight(1);
+
+
+plot Line07 = if  GetSymbol() == ES_F then down_3 else if GetSymbol() == SPX then down_3_spx else if GetSymbol() == "SPY" then down_3_spy else double.nan;
+Line07.SetDefaultColor(Color.WHITE);
+Line07.SetLineWeight(1);
+
+
+plot Line08 = if  GetSymbol() == ES_F then down_4 else if GetSymbol() == SPX then down_4_spx else if GetSymbol() == "SPY" then down_4_spy else double.nan;
+Line08.SetDefaultColor(Color.WHITE);
+Line08.SetLineWeight(1);
+
+
+## For VIX 
+
+
+
+plot Line09 = if  GetSymbol() == "VIX" then 22.2  else double.nan;
+Line09.SetDefaultColor(Color.RED);
+Line09.SetLineWeight(2);
+
+
+
+
+plot Line10 = if  GetSymbol() == "VIX" then 20.06  else double.nan;
+Line10.SetDefaultColor(Color.WHITE);
+Line10.SetLineWeight(2);
+
